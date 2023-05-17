@@ -117,6 +117,44 @@
         
         <!-- Lisää tarvittavat kuvat, otsikot ja esittelyt -->
     </div>
+    
+    
+     <script>
+        window.addEventListener('DOMContentLoaded', (event) => {
+            const images = [
+                { src: 'image1.jpg', alt: 'Image 1', title: 'Title 1', description: 'Description 1' },
+                { src: 'image2.jpg', alt: 'Image 2', title: 'Title 2', description: 'Description 2' },
+                { src: 'image3.jpg', alt: 'Image 3', title: 'Title 3', description: 'Description 3' },
+                // Add more images here
+            ];
+            
+            const galleryContainer = document.querySelector('.gallery');
+
+            images.forEach((image) => {
+                const imageElement = document.createElement('img');
+                imageElement.src = image.src;
+                imageElement.alt = image.alt;
+
+                const titleElement = document.createElement('h2');
+                titleElement.textContent = image.title;
+
+                const descriptionElement = document.createElement('p');
+                descriptionElement.textContent = image.description;
+
+                const galleryItem = document.createElement('div');
+                galleryItem.classList.add('gallery-item');
+                galleryItem.appendChild(imageElement);
+                galleryItem.appendChild(titleElement);
+                galleryItem.appendChild(descriptionElement);
+
+                galleryContainer.appendChild(galleryItem);
+            });
+        });
+    </script>
+    
+    
+    
+    
 </body>
 </html>
 
