@@ -89,7 +89,30 @@
          <div class="gallery-item">
             <img src="Kuva7.png" alt="Kuva 7">
             <h2>mita mita sina juntti sanoa</h2>
-            <p>Mitä juntti sanoa?.</p>
+            <p><div class="gallery">
+        <!-- Kuvat, otsikot ja esittelyt -->
+    </div>
+
+    <button id="playButton">Toista äänite</button>
+    <audio id="audioElement" src="aani/mita.wav"></audio>
+
+    <script>
+        window.addEventListener('DOMContentLoaded', (event) => {
+            const playButton = document.getElementById('playButton');
+            const audioElement = document.getElementById('audioElement');
+
+            playButton.addEventListener('click', () => {
+                if (audioElement.paused) {
+                    audioElement.play();
+                    playButton.textContent = 'Pysäytä äänite';
+                } else {
+                    audioElement.pause();
+                    audioElement.currentTime = 0;
+                    playButton.textContent = 'Toista äänite';
+                }
+            });
+        });
+    </script>
         </div>
         
         
